@@ -1,0 +1,9 @@
+<app-navbar [activeUser]=currentUser.name (searchUser)="getFilteredDetail($event)"></app-navbar>
+<div class="row">
+  <div class="col-md-4 left-bar">
+    <app-left-sidebar [peoples]="peoples" (getActiveUser)="activateClass($event)"></app-left-sidebar>
+  </div>
+  <div class="col-md-8 user-content">
+    <app-user-profile [currentUser]=currentUser></app-user-profile>
+  </div>
+</div>

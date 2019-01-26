@@ -1,0 +1,31 @@
+<div class="row userprofile">
+  <div class="col-md-4 col-sm-12 col-xs-12">
+    <img src="{{currentUser.img}}" class="img-rounded img-responsive" alt="profile" width="150" height="60">
+  </div>
+  <div class="col-md-8 col-sm-12 col-xs-12 userDesc">
+    <button type="button" class="btn btn-secondary" style="font-size:25px;">Send Message !</button>
+    <div class="ratings">
+      <span class="star" *ngFor="let hearts of totalRatings">
+        <span class="glyphicon" [ngClass]="{'glyphicon-heart':currentUser.rating >= hearts , 'glyphicon-heart-empty	
+        ': currentUser.rating < hearts}"></span>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="descp">
+  <p>{{currentUser.Description}}</p>
+</div>
+<table class="table table-striped tlike table-responsive">
+  <thead>
+    <tr>
+      <th>Likes</th>
+      <th>Dislikes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let likes of currentUser.Likes;let i=index">
+      <td>{{likes}}</td>
+      <td>{{currentUser.Dislikes[i]}}</td>
+    </tr>
+  </tbody>
+</table>

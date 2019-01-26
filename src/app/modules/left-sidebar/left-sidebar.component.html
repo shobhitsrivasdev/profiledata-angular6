@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let people of peoples;let i=index" (click)="getUserData(i)"  [ngClass]="{'active': people.active}"
+  (click)="activateClass(people)">
+    {{people.name}}
+    <i *ngIf="people.active" class="glyphicon glyphicon-triangle-right right" style="float:right;"></i>
+
+  </li>
+</ul>
